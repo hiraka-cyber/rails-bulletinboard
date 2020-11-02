@@ -1,0 +1,19 @@
+<div class="form-inline">
+<h1 class="mr-auto">Bulletinboard App</h1>
+<%= link_to 'New threader', new_threader_path ,class:'btn btn-outline-primary'%>
+</div>
+
+<div class="row">
+<% @threaders.each do |threader| %>
+  <div class="col-sm-12 card mt-2">
+  <div class="card-body">
+  <%= threader.title %><br>
+  <%= threader.text %><br>
+  <div class="text-right">
+  <%= link_to 'Read More...',threader_path(threader) %>
+  <%= link_to 'Destroy',threader_path(threader),method: :delete, data: {confirm: 'Are you sure?'} ,class:'btn btn-danger'%>
+  </div>
+  </div>
+  </div>
+<% end %>
+</div>

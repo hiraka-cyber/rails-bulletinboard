@@ -1,0 +1,21 @@
+<div class="card card-header">
+<p>
+ <strong>Title:</strong>
+ <%= @threader.title %>
+</p>
+
+<p>
+ <strong>Text:</strong>
+ <%= @threader.text %>
+</p>
+
+<p>
+<%= link_to 'Edit', edit_threader_path(@threader) ,class:'btn btn-outline-success'%>
+</p>
+</div>
+
+
+<%= render @threader.comments %>
+<%= render "comments/form" %>
+
+<%= link_to '<<', threaders_path ,class:'btn btn-dark'%>
